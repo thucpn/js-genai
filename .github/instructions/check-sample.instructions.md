@@ -55,13 +55,14 @@ Example:
 
 ### 1. Environment Variables
 - Use environment variables for sensitive data (API keys, project IDs)
+- **IMPORTANT:** For Gemini Developer API, the environment variable MUST be named `GOOGLE_API_KEY` (not `GEMINI_API_KEY`). This aligns with the official documentation in README.md.
 - Check for required environment variables and provide helpful error messages
 - Example:
 ```typescript
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY) {
-  console.error('❌ GEMINI_API_KEY environment variable is not set.');
-  console.error('Please set it with: export GEMINI_API_KEY=your-api-key');
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('❌ GOOGLE_API_KEY environment variable is not set.');
+  console.error('Please set it with: export GOOGLE_API_KEY=your-api-key');
   return;
 }
 ```
@@ -165,7 +166,7 @@ const response = await ai.models.generateContent({
 ### Pattern 3: Client Initialization
 ```typescript
 // Gemini Developer API
-const ai = new GoogleGenAI({vertexai: false, apiKey: GEMINI_API_KEY});
+const ai = new GoogleGenAI({vertexai: false, apiKey: GOOGLE_API_KEY});
 
 // Vertex AI
 const ai = new GoogleGenAI({
