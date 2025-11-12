@@ -17,4 +17,4 @@ Success criteria:
 - Manual function calling still works
 - History is properly maintained for multi-turn
 - Tests cover both manual and automatic modes
-- Example demonstrates full 4-step flow
+- Example demonstrates the full AFC process: send prompt with tools → receive function call → execute function → send function response
